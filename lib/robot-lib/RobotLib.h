@@ -31,6 +31,7 @@ namespace RobotLib {
 
         private:
             Vector<Command> scheduledCommands;
+            Vector<Subsystem> subsystems;
     };
 
     class RobotBase {

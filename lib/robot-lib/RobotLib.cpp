@@ -16,4 +16,21 @@ namespace RobotLib {
         static CommandScheduler scheduler;
         return scheduler;
     }
+
+    void CommandScheduler::run() {
+        // Run the periodic method of all subsystems
+        for (Subsystem subsystem : subsystems) {
+            subsystem.periodic();
+        }
+
+        for (int i = 0; i < scheduledCommands.size(); i++) {
+            // Run the execute method of all scheduled commands
+            scheduledCommands[i].execute();
+
+            // Unschedule command if finished
+            if (scheduledCommands[i].isFinished()) {
+                scheduledCommands.remove(i);
+            }
+        }
+    }
 }

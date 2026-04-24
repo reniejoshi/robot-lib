@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include <RobotLib.h>
+using namespace RobotLib;
 
 // put function declarations here:
 int myFunction(int, int);
@@ -10,6 +12,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  CommandScheduler::getInstance().run();
 }
 
 // put function definitions here:
