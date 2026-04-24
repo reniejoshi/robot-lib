@@ -30,7 +30,6 @@ namespace RobotLib {
             void schedule();
 
         private:
-            CommandScheduler& instance;
             Vector<Command> scheduledCommands;
     };
 

@@ -11,4 +11,9 @@ namespace RobotLib {
         angle = constrain(angle, 0, 180);
         servoLib.write(angle);
     }
+
+    CommandScheduler& CommandScheduler::getInstance() {
+        static CommandScheduler scheduler;
+        return scheduler;
+    }
 }
