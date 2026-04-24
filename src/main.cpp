@@ -1,9 +1,12 @@
 #include <Arduino.h>
 #include <RobotLib.h>
+#include "RobotContainer.h"
 using namespace RobotLib;
 
 // put function declarations here:
 int myFunction(int, int);
+
+RobotContainer robotContainer;
 
 void setup() {
   // put your setup code here, to run once:
