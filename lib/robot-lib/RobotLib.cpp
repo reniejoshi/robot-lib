@@ -12,6 +12,16 @@ namespace RobotLib {
         servoLib.write(angle);
     }
 
+    Potentiometer::Potentiometer(int pin) : pin(pin) {
+        pinMode(pin, INPUT);
+    }
+
+    double Potentiometer::getAngle() {
+        int sensorValue = analogRead(pin);
+        double angle = map(sensorValue, 0, 1023, 0, 180);
+        return angle;
+    }
+
     CommandScheduler& CommandScheduler::getInstance() {
         static CommandScheduler scheduler;
         return scheduler;

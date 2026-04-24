@@ -46,5 +46,14 @@ namespace RobotLib {
         private:
             ::Servo servoLib;
     };
+
+    class Potentiometer {
+        public:
+            Potentiometer(int pin);
+            double getAngle();
+        
+        private:
+            int pin;
+    };
 }
 #endif
