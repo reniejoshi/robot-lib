@@ -27,7 +27,7 @@ namespace RobotLib {
         public:
             static CommandScheduler& getInstance();
             void run();
-            void schedule();
+            void schedule(Command* command);
 
         private:
             Vector<Command> scheduledCommands;

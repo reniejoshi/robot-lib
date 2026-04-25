@@ -43,4 +43,11 @@ namespace RobotLib {
             }
         }
     }
+
+    void CommandScheduler::schedule(Command* command) {
+        // TODO: Schedule the command only if the requirements are not currently in use
+    
+        scheduledCommands.push_back(*command);
+        command->initialize();
+    }
 }

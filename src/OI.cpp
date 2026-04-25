@@ -1,5 +1,6 @@
 #include "OI.h"
+#include "arm/SetAngleCommand.h"
 
 void OI::configureBindings() {
-    // Configure potentiometer bindings here for arm angle control
+    CommandScheduler::getInstance().schedule(new SetAngleCommand(&container->arm, potentiometer.getAngle()));
 }

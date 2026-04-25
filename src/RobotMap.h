@@ -3,5 +3,6 @@
 class RobotMap {
     public:
         static const int ARM_SERVO_PIN = 1;
+        static const int POTENTIOMETER_PIN = A0;
 };
 #endif
